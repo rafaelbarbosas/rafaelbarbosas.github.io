@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rafael Barbosa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header com todas as 'páginas' do site -->
+    <header>
+        <nav>
+            <a onclick="mostrarSection('sobre-mim')">Sobre Mim</a>
+            <a onclick="mostrarSection('formacao')">Formação</a>
+            <a onclick="mostrarSection('portfolio')">Portfólio</a>
+            <a onclick="mostrarSection('contato')">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo da 'página' Sobre Mim -->
+        <!-- TODO: pensar num estilo -->
+        <!-- TODO: fazer página -->
+    <section
+        id="sobre-mim"
+        class="secaoPrincipal"
+        aria-label="Sobre Mim"
+        style="display: block;"
+    >
+        <h1>Sobre Mim</h1>
+        <p>
+            Programador no Banco do Brasil;
+            Interessado em conhecer a realidade como ela realmente é
+                -- religião, filosofia, literatura, astronomia e ciências antigas;
+            Hobbies: xadrez, Matemática, problemas de lógica, e atividades manuais (caligrafia, artesanato e afins).
+        </p>
+    </section>
+
+    <!-- Conteúdo da 'página' Formação -->
+        <!-- TODO: pensar num estilo -->
+        <!-- TODO: fazer página -->
+    <section
+        id="formacao"
+        class="secaoPrincipal"
+        aria-label="Formação"
+        style="display: none;"
+    >
+        <h1>Formação</h1>
+        <p>
+            Formação educacional e profissional
+            + 2014 a 2016: técnico em informática para a internet, IFG
+            + 2017 a 2023: engenharia de computação na UnB [não concluído]
+            + 2024 até hoje: ciência da computação na UNINTER
+            + Estágio Topocart
+            + Programador Júnior Topocart
+            + Programador Júnior - BB
+                -- Portal de Crédito
+                -- Plataforma BB - Consórcios
+            
+            Línguas:
+            + Inglês intermediário
+            + Espanhol iniciante
+        </p>
+    </section>
+
+    <!-- Conteúdo da 'página' Portfólio -->
+        <!-- TODO: fazer três sites básicos para portfólio -->
+        <!-- TODO: listar todos os projetos que tenho no github -->
+        <!-- TODO: fazer esta página, usando um bom estilo-->
+    <section
+        id="portfolio"
+        class="secaoPrincipal"
+        aria-label="Contato"
+        style="display: none;"
+    >
+        <h1>Portfólio</h1>
+        <p>Abaixo estão alguns dos meus projetos:</p>
+        <ul>
+            <li><a href="#" target="_blank">Projeto 1 - Página de login</a></li>
+            <li><a href="#" target="_blank">Projeto 2 - Calculadora em JavaScript</a></li>
+            <li><a href="#" target="_blank">Projeto 3 - Site de receitas</a></li>
+        </ul>
+    </section>
+
+    <!-- Conteúdo da 'página' Contato -->
+        <!-- TODO: escrever conteúdo -->
+        <!-- TODO: pensar num estilo -->
+        <!-- TODO: fazer página -->
+    <section id="contato" class="secaoPrincipal" aria-label="Contato" style="display: none;">
+        <h1>Contato</h1>
+        <form>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu email" required>
+            <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <!-- Scripts do site -->
+    <script>
+        const listaSectionsPrincipais = ['sobre-mim', 'formacao', 'portfolio', 'contato'];
+
+        function ocultarSectionsPrincipais() {
+            listaSectionsPrincipais.forEach(id => {
+                const secao = document.getElementById(id);
+                if (secao) {
+                    secao.style.display = 'none';
+                }
+            });
+        }
+
+        function mostrarSection(idSection) {
+            ocultarSectionsPrincipais();
+
+            // Mostra apenas a <section> correspondente ao id informado
+            const secaoSelecionada = document.getElementById(idSection);
+            if (secaoSelecionada) {
+                secaoSelecionada.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
