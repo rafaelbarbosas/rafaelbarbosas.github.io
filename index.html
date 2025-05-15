@@ -1,11 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Rafael Barbosa</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /*
+        * CSSs aplicados à página inteira
+        */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Estilo geral para todas as seções principais */
+        .secaoPrincipal {
+            padding: 20px;
+            background-color: white;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /*
+        * CSSs da Seção principal - FORMAÇÃO
+        */
+
+        /* Estilos para a linha do tempo */
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            padding-left: 40px;
+            border-left: 3px solid #333;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            color: #555;
+            font-size: 16px;
+            white-space: pre-line;
+            /* para respeitar quebras de linha no texto */
+        }
+
+        /*
+        * CSSs da Seção principal - SOBRE MIM
+        */
+
+        #sobre-mim h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 8px;
+        }
+
+        #sobre-mim p {
+            font-size: 1.15rem;
+            white-space: pre-line;
+            /* para respeitar quebras de linha */
+        }
+
+        #sobre-mim p::first-letter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2980b9;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            font-family: 'Georgia', serif;
+        }
+
+        @media (max-width: 600px) {
+            #sobre-mim {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+
+            #sobre-mim h1 {
+                font-size: 2rem;
+            }
+
+            #sobre-mim p {
+                font-size: 1rem;
+            }
+        }
+
+        /*
+        * CSSs da Seção principal - CONTATO
+        */
+
+        /* Estilo para os inputs*/
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Header com todas as 'páginas' do site -->
@@ -19,74 +191,74 @@
     </header>
 
     <!-- Conteúdo da 'página' Sobre Mim -->
-        <!-- TODO: pensar num estilo -->
-        <!-- TODO: fazer página -->
-    <section
-        id="sobre-mim"
-        class="secaoPrincipal"
-        aria-label="Sobre Mim"
-        style="display: block;"
-    >
+    <section id="sobre-mim" class="secaoPrincipal" aria-label="Sobre Mim" style="display: block;">
+        <h2>Rafael Barbosa de Sousa</h2>
         <h1>Sobre Mim</h1>
         <p>
             Programador no Banco do Brasil;
             Interessado em conhecer a realidade como ela realmente é
-                -- religião, filosofia, literatura, astronomia e ciências antigas;
+            &nbsp;&nbsp;&nbsp;&nbsp;-- religião, filosofia, literatura, astronomia e ciências antigas;
             Hobbies: xadrez, Matemática, problemas de lógica, e atividades manuais (caligrafia, artesanato e afins).
         </p>
     </section>
 
     <!-- Conteúdo da 'página' Formação -->
-        <!-- TODO: pensar num estilo -->
-        <!-- TODO: fazer página -->
-    <section
-        id="formacao"
-        class="secaoPrincipal"
-        aria-label="Formação"
-        style="display: none;"
-    >
+    <section id="formacao" class="secaoPrincipal" aria-label="Formação" style="display: none;">
         <h1>Formação</h1>
-        <p>
-            Formação educacional e profissional
-            + 2014 a 2016: técnico em informática para a internet, IFG
-            + 2017 a 2023: engenharia de computação na UnB [não concluído]
-            + Estágio Topocart (2019)
-            + Programador Júnior Topocart (2021)
-            + Programador Júnior - BB (2022)
-                -- Portal de Crédito (2022 a 2023)
-                -- Plataforma BB - Consórcios (2023 - até hoje)s
-            + 2024 até hoje: ciência da computação na UNINTER
-            
-            Línguas:
-            + Inglês intermediário
-            + Espanhol iniciante
-        </p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>2014 a 2016</h3>
+                <p>Técnico em informática para a internet, IFG</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2017 a 2023</h3>
+                <p>Engenharia de computação na UnB [não concluído]</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2019</h3>
+                <p>Estágio Topocart</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2021</h3>
+                <p>Programador Júnior Topocart</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2022</h3>
+                <p>Programador Júnior - BB</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2022 a 2023</h3>
+                <p>Portal de Crédito</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2023 - até hoje</h3>
+                <p>Plataforma BB - Consórcios</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 até hoje</h3>
+                <p>Ciência da computação na UNINTER</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Línguas</h3>
+                <p>Inglês intermediário<br>Espanhol iniciante</p>
+            </div>
+        </div>
     </section>
 
     <!-- Conteúdo da 'página' Portfólio -->
-        <!-- TODO: fazer três sites básicos para portfólio -->
-        <!-- TODO: listar todos os projetos que tenho no github -->
-        <!-- TODO: fazer esta página, usando um bom estilo-->
-    <section
-        id="portfolio"
-        class="secaoPrincipal"
-        aria-label="Contato"
-        style="display: none;"
-    >
+    <section id="portfolio" class="secaoPrincipal" aria-label="Contato" style="display: none;">
         <h1>Portfólio</h1>
         <p>Abaixo estão alguns dos meus projetos:</p>
         <ul>
             <li><a href="http://rafael-barbosa-de-sousa.ct.ws/pomodoroClockJS/" target="_blank">
-                Projeto 1 - Relogio pomodoro
-            </a></li>
-            <li><a href="http://rafael-barbosa-de-sousa.ct.ws/minyoutube.org" target="_blank">Projeto 2 - YouTube Minimalista</a></li>
+                    Projeto 1 - Relogio pomodoro
+                </a></li>
+            <li><a href="http://rafael-barbosa-de-sousa.ct.ws/minyoutube.org" target="_blank">Projeto 2 - YouTube
+                    Minimalista</a></li>
         </ul>
     </section>
 
     <!-- Conteúdo da 'página' Contato -->
-        <!-- TODO: escrever conteúdo -->
-        <!-- TODO: pensar num estilo -->
-        <!-- TODO: fazer página -->
     <section id="contato" class="secaoPrincipal" aria-label="Contato" style="display: none;">
         <h1>Contato</h1>
         <form>
@@ -122,4 +294,5 @@
     </script>
 
 </body>
+
 </html>
